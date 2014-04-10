@@ -1,1 +1,16 @@
-<h1>Demo</h1>
+<h3>Go ahead, play around.</h3>
+
+<div class="box">
+  <div class="login-left">
+    <form>
+      {{eui-input placeholder="Email Address" size="large" valueBinding="emailAddress"}}
+      {{eui-button label="Sign In" size="large" disabledBinding="isInvalidEmail" action="verifyAccount"}}
+    </form>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="login-right">
+    {{eui-button label="Create Account" size="large" style="primary" action="signup"}}
+  </div>
+</div>
