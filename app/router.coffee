@@ -4,7 +4,7 @@ Router.reopen
   location: 'history'
 
 Router.map ->
-  
+  this.route 'signup'
 
   this.route '404', { path: '*path' } # Catch all for all remaining routes
 
