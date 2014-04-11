@@ -4,6 +4,11 @@ controller = Ember.ObjectController.extend Ember.Validations.Mixin,
   passwordConfirmation: null
   avatar: null
 
+  avatars: [
+    { imageUrl: '/assets/images/avatar1.jpg' }
+    { imageUrl: '/assets/images/avatar2.jpg' }
+  ]
+
   validations: {
     email: {
       presence: { message: true }
