@@ -24,8 +24,11 @@ controller = Ember.ObjectController.extend Ember.Validations.Mixin,
   }
 
   createAccountButtonStyle: (->
-    return 'default' if @get 'errors'
-    return 'primary'
-  ).property 'errors'
+    return 'primary' if @get 'isValid'
+    return 'default'
+  ).property 'isValid'
+
+
+  isInvalid: Em.computed.not 'isValid'
 
 `export default controller`

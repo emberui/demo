@@ -10,9 +10,9 @@ route = Ember.Route.extend
         content: { selectedAvatar: @get('controller.avatar'), avatars: @get('controller.avatars') }
         style: 'full'
         class: 'selectavatar'
+        accept: 'setAvatar'
 
-    setAvatar: ->
-      console.log "test"
-      debugger
+    setAvatar: (avatar) ->
+      @set 'controller.avatar', avatar.imageUrl
 
 `export default route`
