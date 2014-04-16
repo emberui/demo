@@ -5,8 +5,8 @@ controller = Ember.ObjectController.extend Ember.Validations.Mixin,
   avatar: null
 
   avatars: [
-    { imageUrl: '/assets/images/avatar1.jpg' }
-    { imageUrl: '/assets/images/avatar2.jpg' }
+    { imageUrl: 'assets/images/avatar1.jpg' }
+    { imageUrl: 'assets/images/avatar2.jpg' }
   ]
 
   validations: {
