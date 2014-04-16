@@ -1,7 +1,0 @@
-<h1>Please select an avatar</h1>
-
-<ul>
-  {{#each 'content.avatars'}}
-    <li {{action 'accept' this}}><img {{bind-attr src="imageUrl"}} /></li>
-  {{/each}}
-</ul>
