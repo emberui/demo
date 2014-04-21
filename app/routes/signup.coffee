@@ -15,4 +15,17 @@ route = Ember.Route.extend
     setAvatar: (avatar) ->
       @set 'controller.avatar', avatar.imageUrl
 
+    createAccount: ->
+      if @get 'controller.isValid'
+        # create account
+        @setProperties {
+          'controller.application.email': @get('controller.email'),
+          'controller.application.password': @get('controller.password'),
+          'controller.application.avatar': @get('controller.avatar')
+        }
+        @transitionTo 'index'
+
+      else
+        @set 'controller.submitted', true
+
 `export default route`

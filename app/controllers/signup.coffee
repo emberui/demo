@@ -1,8 +1,12 @@
 controller = Ember.ObjectController.extend Ember.Validations.Mixin,
+  needs: "application"
+  application: Ember.computed.alias("controllers.application")
+
   email: null
   password: null
   passwordConfirmation: null
   avatar: null
+  submitted: false
 
   avatars: [
     { imageUrl: 'assets/images/avatar1.jpg' }
@@ -11,24 +15,13 @@ controller = Ember.ObjectController.extend Ember.Validations.Mixin,
 
   validations: {
     email: {
-      presence: { message: true }
-      length: { minimum: 3, message: true }
+      presence: { message: true },
+      format: { with: /^[^@]+@[^@]+\.[^@\.]{2,}$/, allowBlank: false, message: 'That is not a real email address' }
     },
     password: {
       presence: { message: true },
       confirmation: { message: true }
-    },
-    avatar: {
-      presence: { message: true }
     }
   }
-
-  createAccountButtonStyle: (->
-    return 'primary' if @get 'isValid'
-    return 'default'
-  ).property 'isValid'
-
-
-  isInvalid: Em.computed.not 'isValid'
 
 `export default controller`

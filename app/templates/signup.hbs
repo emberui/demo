@@ -6,30 +6,32 @@
   <div class="divider"></div>
 
   <div class="signup-right">
-    <h4>Login Details</h4>
-    <div class="field-row">
-      {{eui-input size="large" required="true" placeholder="Email Address" width="100%" valueBinding="email" errorBinding="errors.email"}}
-    </div>
-    <div class="field-row">
-      <div class="row-item">
-        {{eui-input type="password" required="true" size="large" placeholder="Password" width="100%" valueBinding="password" errorBinding="errors.password"}}
+    <form>
+      <h4>Login Details</h4>
+      <div class="field-row">
+        {{eui-input size="large" forceValidateBinding="submitted" placeholder="Email Address" width="100%" valueBinding="email" errorBinding="errors.email"}}
       </div>
-      <div class="row-item">
-        {{eui-input type="password" required="true" size="large" placeholder="Confirm Passwords" width="100%" valueBinding="passwordConfirmation" errorBinding="errors.passwordConfirmation"}}
+      <div class="field-row">
+        <div class="row-item">
+          {{eui-input type="password" forceValidateBinding="submitted" size="large" placeholder="Password" width="100%" valueBinding="password" errorBinding="errors.password"}}
+        </div>
+        <div class="row-item">
+          {{eui-input type="password" forceValidateBinding="submitted" size="large" placeholder="Confirm Passwords" width="100%" valueBinding="passwordConfirmation" errorBinding="errors.passwordConfirmation"}}
+        </div>
       </div>
-    </div>
 
-    <h4>Avatar</h4>
-    <p>
-      We would like some sort of image to represent you with.
-    </p>
-    <div class="avatar">
-      {{#if avatar}}
-        <img {{bind-attr src="avatar"}} />
-      {{/if}}
-      {{eui-button label="Select Avatar" size="small" action="selectAvatar"}}
-    </div>
+      <h4>Avatar</h4>
+      <p>
+        We would like some sort of image to represent you with.
+      </p>
+      <div class="avatar">
+        {{#if avatar}}
+          <img {{bind-attr src="avatar"}} />
+        {{/if}}
+        {{eui-button label="Select Avatar" size="small" action="selectAvatar"}}
+      </div>
 
-    {{eui-button label="Create Account" styleBinding="createAccountButtonStyle" action="createAccount" disabledBinding="isInvalid"}}
+      {{eui-button type="submit" label="Create Account" style="primary" action="createAccount"}}
+    </form>
   </div>
 </div>
