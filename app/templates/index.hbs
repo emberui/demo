@@ -1,16 +1,13 @@
 <h3>Go ahead, play around.</h3>
 
 <div class="box">
-  <div class="login-left">
-    <form>
-      {{eui-input placeholder="Email Address" size="large" valueBinding="application.email"}}
-      {{eui-button label="Sign In" size="large" styleBinding="loginButtonStyle" disabledBinding="isInvalidEmail" action="verifyAccount"}}
-    </form>
-  </div>
+  <form class="login">
+    {{eui-input placeholder="Email Address" size="large" valueBinding="email"}}
+    {{eui-input type="password" placeholder="Password" size="large" valueBinding="password"}}
+    {{eui-button label="Sign In" size="large" styleBinding="loginButtonStyle" disabledBinding="isInvalidEmail" action="verifyAccount"}}
+  </form>
+</div>
 
-  <div class="divider"></div>
-
-  <div class="login-right">
-    {{eui-button label="Create Account" size="large" style="primary" action="signup"}}
-  </div>
+<div class="cta">
+  Don't already have an account? {{link-to "Create one now" "signup"}}
 </div>

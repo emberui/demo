@@ -12,6 +12,16 @@ body {
   margin: auto;
 }
 
+a {
+  text-decoration: none;
+  color: #1a82dc;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #0b5492;
+  }
+}
+
 h3 {
   font-size: 24px;
   font-family: "adelle-sans", sans-serif;
@@ -47,22 +57,14 @@ p {
   color: #303030;
 }
 
-.login-left {
-  float: left;
-  padding-right: 50px;
-  width: 405px;
-  box-sizing: border-box;
+.login .eui-button {
+  width: 115px;
 }
 
-.login-right {
-  float: left;
-  padding-left: 50px;
-  width: 220px;
-  box-sizing: border-box;
-
-  .eui-button {
-    display: block;
-  }
+.cta {
+  margin-top: 40px;
+  text-align: center;
+  text-shadow: 1px 1px rgba(255,255,255,0.7);
 }
 
 .divider {
@@ -111,6 +113,10 @@ p {
     &:last-child {
       padding-right: 0px;
     }
+  }
+
+  &.block .eui-button {
+    width: 100%;
   }
 }
 

@@ -2,7 +2,8 @@ controller = Ember.ObjectController.extend
   needs: "application"
   application: Ember.computed.alias("controllers.application")
 
-  emailAddress: null
+  email: null
+  password: null
 
   isInvalidEmail: Ember.computed.empty('emailAddress')
 
