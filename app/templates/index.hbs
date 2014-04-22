@@ -2,9 +2,9 @@
 
 <div class="box">
   <form class="login">
-    {{eui-input placeholder="Email Address" size="large" valueBinding="email"}}
-    {{eui-input type="password" placeholder="Password" size="large" valueBinding="password"}}
-    {{eui-button label="Sign In" size="large" styleBinding="loginButtonStyle" disabledBinding="isInvalidEmail" action="verifyAccount"}}
+    {{eui-input placeholder="Email Address" size="large" valueBinding="email" errorBinding="errors.email"}}
+    {{eui-input type="password" placeholder="Password" size="large" valueBinding="password" errorBinding="errors.password"}}
+    {{eui-button label="Sign In" size="large" styleBinding="loginButtonStyle" disabledBinding="isInvalid" action="verifyAccount"}}
   </form>
 </div>
 
